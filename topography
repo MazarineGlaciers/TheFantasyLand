@@ -1,0 +1,30 @@
+public class topography {
+    private int hurt;//造成的伤害
+    private int x;//该地形起始点的x坐标
+    private int y;//该地形起始点的y坐标
+    private int xLength;//占据的长度
+    private int yHeight;//占据的高度
+    private int SpeedEffect;//对速度的影响
+    private int AtkEffect;//对atk的影响
+    private int ExpEffect;//对经验的影响
+    
+    public topography(){
+        //hurt,SpeedEffect,AtkEffect,ExpEffect 只在构造函数里更改
+        //即：同一地形的hurt,SpeedEffect,AtkEffect,ExpEffect 是不变的
+    }
+    public void setX(int x) {
+        this.x=x;
+    }
+    
+    public void setY(int y) {
+        this.y=y;
+    }
+    
+    public void setxLength(int xl) {
+        this.xLength=xl;
+    }
+    
+     public void setyHeight(int yl) {
+        this.yHeight=yl;
+    }
+}
