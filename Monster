@@ -1,0 +1,35 @@
+public class Monster extends character{
+	private int dropPossibility;
+	
+	public Monster(int natk,int nhp,int nx,int ny,int nspeed,int nexp,int nP) {
+		super(natk,nhp,nx,ny,nspeed,nexp);
+		this.dropPossibility=nP;
+	}
+	
+	
+	//!!！VERY IMPORTANT!!! Since the class for player has noot been coded yet, i will use character instead.
+	public void attack(character ah) {
+		ah.setHp(ah.getHp()-this.getAtk());
+	}
+	
+	
+	
+	public void beAttack(character fuck) {
+		this.setHp(this.getHp()-fuck.getAtk());
+	}
+	
+	
+	
+	public void walk(int x,int y) {
+		this.setX(this.getX()+x);
+		this.setY(this.getY()+y);
+	}
+	
+	public void dropExp(character fuckyou) {
+		fuckyou.setExp(fuckyou.getExp()+this.getExp());
+	}
+	
+	public void dropEqu(character fucker) {
+		//Before coding the equipment class, I will not code this fucntion
+	}
+}
