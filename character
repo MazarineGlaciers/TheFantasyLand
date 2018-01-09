@@ -1,15 +1,24 @@
-    public class character{
-    private int atk;//角色的攻击力
+public class character{
+    int atk;//角色的攻击力
     private int hp;//角色的血量
     private int x;//角色的位置坐标x
     private int y;//角色的位置坐标y
     private int speed;//角色的移动速度
-    private int exp;   //角色的经验值
+    int exp;   //角色的经验值
+    character(int natk,int nhp,int nx,int ny,int nspeed,int nexp){
+        atk=natk;
+        hp=nhp;
+        x=nx;
+        y=ny;
+        speed=nspeed;
+        exp=nexp;
+        //nP是dropPossibility,怪物的掉落几率，见Monster类
+    }
  
-    public void setY(int y) {
+         void setY(int y) {
         this.y = y;
     }
-
+         //setX Y：确定角色在地图上的位置
     public void setX(int x) {
         this.x = x;
     }
@@ -17,7 +26,7 @@
     public void setSpeed(int speed) {
         this.speed = speed;
     }
-
+    //设定角色的移动速度，1对应1格
     public void setHp(int hp) {
         this.hp = hp;
     }
@@ -37,9 +46,7 @@
     public int getX() {
         return x;
     }
-    public character() {}
-    
-
+ 
     public int getSpeed() {
         return speed;
     }
@@ -55,4 +62,25 @@
     public int getAtk() {
         return atk;
     }
+ 
+
+	public void beAttack(character ah) {
+		this.setHp(this.getHp()-ah.getAtk());
+	}
+	//character ah是另一个角色，可以是人物也可以是怪物
+        //beAttack函数表示该角色受到ah角色攻击后，体力=原体力-ah的攻击力
+	
+	public void walk(int x,int y) {
+		this.setX(this.getX()+x);
+		this.setY(this.getY()+y);
+	}
+        //角色位移函数
+        
+        
+        public void attack(character ah) {
+		ah.setHp(ah.getHp()-atk);
+	}
+	//该函数表示普通攻击函数：对ah的体力=ah原体力-该角色的atk值
+
+
 }
