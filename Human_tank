@@ -1,0 +1,11 @@
+public class Human_tank extends Human{
+       public Human_tank(int nx,int ny) {
+       super(nx,ny);
+        atk=this.atk-1000;
+        this.setHp(this.getHp()+20000);
+        damage=this.atk;//技能伤害的初始值为角色的攻击力
+	}
+       public void roudanzhanche(){
+           damage=1000000000;
+       }//技能2：肉弹战车
+}
