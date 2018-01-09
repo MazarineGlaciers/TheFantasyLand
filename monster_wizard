@@ -1,0 +1,14 @@
+public class monster_wizard extends monster{
+    public monster_wizard(int nx,int ny){
+		super(nx,ny,0.333);
+		this.dropPossibility=0.333;
+                //有33.3%的几率刷出女巫
+	}
+    public void minusExp(character man){
+        man.setExp(man.getExp()-(this.getExp()/3));
+    }
+    //女巫的技能：让角色man的exp降低,man的exp=原exp-女巫的exp/3
+    public void dropEqu(character man) {
+		//掉落装备功能待补充
+	}
+}
