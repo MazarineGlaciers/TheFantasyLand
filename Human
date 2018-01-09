@@ -1,0 +1,19 @@
+public class Human extends character{
+    int damage; //角色放出的技能伤害
+    public Human(int nx,int ny){
+		super(2000,10000,nx,ny,1,50);
+               //所有角色起始生命10000，攻击力2000，速度1（一步走1格），经验50
+                damage=2000;//技能伤害的初始值为角色的攻击力,即2000
+	}
+    public void DamageToOthers(monster monster1){
+            monster1.setHp(monster1.getHp()-this.damage);
+            damage=atk;//放完技能后，damage归位
+        }
+        //monster1是一个怪物
+        //该函数表示技能攻击函数：该角色对monster放技能时造成的伤害，monster的体力=monster的原体力-该角色damage值
+   public void ObtainExp(monster monster1){
+            this.exp=this.exp+monster1.getExp();
+        }
+   
+        //该函数表示获得经验函数（杀了怪物之后调用）：该角色增长的经验值=原经验值+怪物monster的经验值
+}
