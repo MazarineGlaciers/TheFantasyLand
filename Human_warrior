@@ -1,0 +1,11 @@
+class Human_warrior extends Human{
+   public Human_warrior(int nx,int ny) {
+       	super(nx,ny);
+        atk=this.atk+1000;
+        this.setHp(this.getHp()+1000);
+        damage=this.atk;//技能伤害的初始值为角色的攻击力  
+	}
+   public void tianmaliuxingquan(){
+       damage=1000;
+   }//技能1：天马流星拳        
+     }
