@@ -1,0 +1,13 @@
+public class monster_zombie extends monster{
+     public monster_zombie(int nx,int ny){
+		super(nx,ny,0.333);
+		this.dropPossibility=0.333;
+	}
+    public void minusAtk(character man){
+        man.setAtk(man.getAtk()-(this.getAtk()/2));
+    }
+    //僵尸的技能：让角色man的atk降低,man的atk=原atk-僵尸的atk/3
+    public void dropEqu(character man) {
+		//掉落装备功能待补充
+	}
+}
