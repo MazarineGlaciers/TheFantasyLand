@@ -1,0 +1,12 @@
+public class Human_assassin extends Human{
+    public Human_assassin(int nx,int ny){
+		super(nx,ny);
+                atk=this.atk+500;
+                this.setSpeed(this.getSpeed()+2);
+                damage=this.atk;//技能伤害的初始值为角色的攻击力
+	}
+
+       public void jingkeciqin(){
+           damage=1500;
+       }//技能2：荆轲刺秦
+}
