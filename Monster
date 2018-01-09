@@ -1,35 +1,32 @@
-public class Monster extends character{
-	private int dropPossibility;
-	
-	public Monster(int natk,int nhp,int nx,int ny,int nspeed,int nexp,int nP) {
-		super(natk,nhp,nx,ny,nspeed,nexp);
+public class monster extends character{
+	double dropPossibility;
+	//nP是dropPossibility,怪物的掉落几率
+        Human tempForMan;
+        //这个变量用来储存角色Man的数据，见下面的tempForMan函,int nspeed,int nexp,int nP数
+	public monster(int nx,int ny,double nP){
+		super(1200,4000,nx,ny,1,120);
+                //所有怪物的初始攻击力都是1200，血量3000,移动速度1格，掉落经验120
 		this.dropPossibility=nP;
+                //怪物掉落几率因怪物种类而异
 	}
+        
+        public void SetTempForMan(Human human1){
+            Human tempForMan=human1;
+        }
+        //战斗开始时，这个函数用来储存角色human1的数据，以便怪物被human1打死后，去掉human1身上的Debuff，恢复其原来的atk、exp和speed
+	public void NoDebuff(Human human1){
+            if(this.getHp()<=0){
+                human1=tempForMan;
+            }
+        }
+        //怪物死后，这个函数用来消除角色human1身上的debuff；消除完了之后，再调用其它函数，给予角色human1经验、装备等奖励
 	
-	
-	//!!！VERY IMPORTANT!!! Since the class for player has noot been coded yet, i will use character instead.
-	public void attack(character ah) {
-		ah.setHp(ah.getHp()-this.getAtk());
-	}
-	
-	
-	
-	public void beAttack(character fuck) {
-		this.setHp(this.getHp()-fuck.getAtk());
-	}
-	
-	
-	
-	public void walk(int x,int y) {
-		this.setX(this.getX()+x);
-		this.setY(this.getY()+y);
-	}
-	
-	public void dropExp(character fuckyou) {
-		fuckyou.setExp(fuckyou.getExp()+this.getExp());
-	}
-	
-	public void dropEqu(character fucker) {
+	public void dropEqu(Human human1) {
 		//Before coding the equipment class, I will not code this fucntion
 	}
+        
+        public void dropExp(Human human1) {
+            human1.setExp(human1.getExp()+this.getExp());
+	}
+        //该函数表示掉落经验函数（怪物被杀之后调用）：ah角色增长的经验值=ah原经验值+该角色经验值
 }
