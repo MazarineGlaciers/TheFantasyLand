@@ -1,0 +1,14 @@
+  public class monster_slime extends monster{
+        public monster_slime(int nx,int ny){
+                    super(nx,ny,0.333);
+                    this.dropPossibility=0.333;
+                    //有33.3%的几率刷出史莱姆
+            }
+        public void minusSpeed(character man){
+            man.setSpeed(man.getSpeed()-(this.getSpeed()/2));
+        }
+        //史莱姆的技能：让碰到它的角色man速度降低，man的速度=原速度-史莱姆的速度/2
+        public void dropEqu(character man) {
+                    //掉落装备功能待补充
+            }
+        }
