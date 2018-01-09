@@ -1,0 +1,18 @@
+public class Human_magician extends Human{
+    public Human_magician(int nx,int ny) {
+       	super(nx,ny);
+        atk=this.atk-500;
+        this.setHp(this.getHp()+500);
+        damage=this.atk;//技能伤害的初始值为角色的攻击力
+	}
+    
+    public void ObtainExp(character ah){
+            this.exp=this.exp+ah.getExp()+500;
+        }
+    //法师每次打怪，多加500经验值
+    
+       public void wufawutian(){
+           damage=500;
+           exp=this.exp+1000;
+       }//技能2：舞法无天
+}
